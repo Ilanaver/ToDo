@@ -17,7 +17,7 @@ let listToDo = [];
   function updateTodoList() {
     const todoList = document.getElementById("todoList");
     todoList.innerHTML = "";
-      listToDo.forEach(toDo => {
+      listToDo.forEach((toDo, index) => {
         const li = document.createElement("li");
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -39,8 +39,19 @@ let listToDo = [];
       }
       li.appendChild(checkbox);
       li.appendChild(label);
+
+      const eliminarbtn = document.createElement('button')
+      eliminarbtn.classList.add('eliminar-btn')
+      eliminarbtn.addEventListener('click', () => {
+        eliminarTarea(index)
+      })
+      li.appendChild(eliminarbtn)
       todoList.appendChild(li);
     });
+  }
+  function eliminarTarea(index){
+    listToDo.splice(index, 1)
+    updateTodoList()
   }
   function showFastestTask() {
     const completedTasks = listToDo.filter(toDo => toDo.completa !== null);

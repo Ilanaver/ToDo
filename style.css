@@ -21,3 +21,17 @@
     margin-bottom: 5px;
     cursor: pointer;
   }
+  li{
+    font-size: 18px;
+    font-weight: 600;
+  }
+.eliminar-btn{
+  background-image: url(borrar-plugins-wordpress.png);
+  background-color: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+}
